@@ -17,7 +17,7 @@ To clone and run this project, you need to have [Git](https://git-scm.com) insta
 
 ```bash
 # Clona el repositorio
-git clone git@github.com:Second-year/toDoList.git
+git clone https://git@github.com:usuarioPerez2024/toDoList.git
 
 # Navega al directorio del proyecto
 cd toDoList
