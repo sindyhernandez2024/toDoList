@@ -9,33 +9,81 @@
     <title>To do list</title>
 </head>
 
+<center><h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">The new</span> To Do List</h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">For a better organization with your To Do List</p></center>
+
 <body class="bg">
     <div class="container mx-auto p-4">
-        <h1 class="text-5xl font-semibold mb-4 text-align: center;">To Do List</h1>
+        <h1 class="text-5xl font-semibold mb-4 text-align: center;"></h1>
         <hr>
         <form id="task-form" class="mb-4">
+         
             <div class="mb-2">
                 <input type="text" id="task-title" placeholder="Task title" required
-                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+                    class="w-full px-4 py-2 rounded-lg border border-black focus:outline-none focus:border-blue-500">
             </div>
 
             <div class="mb-2">
                 <textarea id="task-description" placeholder="Task description"
-                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
+                    class="w-full px-4 py-2 rounded-lg border border-black focus:outline-none focus:border-blue-500"></textarea>
             </div>
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Add
-                Task</button>
 
-            
-                <div class="flex flex-row">
-                    <div class="basis-1/2">03</div>
-                </div>
+            <!--Inicia el start date-->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <div class="relative max-w-sm">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </div>
+            <input id="datepicker" type="text" class="bg-gray-50 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Start date">
+        </div>
+
+        <script>
+            flatpickr("#datepicker", {
+                dateFormat: "m/d/Y", // Formato de fecha deseado
+            });
+        </script>
+        <br>
+
+        <!--Inicia el finish date-->          
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+        <div class="relative max-w-sm">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </div>
+            <input id="datepicker" type="text" class="bg-gray-50 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Finish date">
+        </div>
+
+        <script>
+            flatpickr("#datepicker", {
+                dateFormat: "m/d/Y", // Formato de fecha deseado
+            });
+        </script>
+        <br>
+        
+        <!--Boton de add task-->
+        <button type="submit" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 
+        focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Task</button>
+        <br><br>
+
+        <!--Botones de los 3 estados--> 
+        <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-40 py-5 text-center mr-2 mb-2">Pendientes</button>
+        <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-40 py-5 text-center mr-2 mb-2">En proceso</button>
+        <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-40 py-5 text-center mr-2 mb-2">Finalizadas</button>
 
         </form>
         <ul id="task-list" class="space-y-4"></ul>
     </div>
     
-    <script src="main.js"></script>
+    <script src="main2.js"></script>
 </body>
 
 </html>
